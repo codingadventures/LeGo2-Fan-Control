@@ -22,7 +22,7 @@ There are two versions available depending on your setup:
 
 <ul>
 <li><p><b>Windows Version:</b><br>
-Download the Windows app <a href=https://drive.google.com/uc?id=1daSOBJgaf3sjsLE6WHcam2nul2oBxAJF>here</a>.<br>
+Download the Windows app <a href="https://drive.google.com/uc?export=download&id=1daSOBJgaf3sjsLE6WHcam2nul2oBxAJF">here</a>.<br>
 Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> before running LeGo2 Fan Control on Windows.</p></li>
   <img src="https://i.postimg.cc/bJVGFdhY/LG2FC-windows.png">
 <li><p><b>Decky Loader Version (SteamOS / Bazzite / CachyOS etc…):</b><br>
