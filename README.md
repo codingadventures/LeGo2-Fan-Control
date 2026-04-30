@@ -33,9 +33,7 @@ Source available <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky">her
 <br>
 <h4>Disclaimer / Warning</h4>
 
-<p>Please use this software responsibly. Modifying your device's cooling behaviour carries inherent risks. Setting fan speeds too low while the system is under heavy load can cause your device to overheat, which may result in thermal throttling, system shutdowns, or permanent hardware damage.</p>
-
-<p>By using this software, you accept full responsibility for any thermal issues or hardware damage that may occur.</p>
+<p>By using this software, you accept full responsibility for any damage that may occur. Bypassing hardware thermal limits carries inherent risks; use sensible fan curves.</p>
 
 <br>
 <h4>Created by</h4>
