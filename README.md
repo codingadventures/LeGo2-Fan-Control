@@ -1,4 +1,4 @@
-<p>Tired of your Legion Go 2 fan revving up all the time, even when you're just browsing or playing light games? Existing fan control applications don't let you override the hardware's minimum fan speeds. Frustrated by this I built a tool that bypasses this limitation.</p>
+<p>Tired of your Legion Go 2 fan revving up and down at high speeds regardless of light or heavy games? Existing fan control applications don't let you override the hardware's minimum fan speeds. Frustrated by this I built a tool that bypasses this limitation.</p>
 
 <br>
 
