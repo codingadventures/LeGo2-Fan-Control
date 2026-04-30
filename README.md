@@ -1,0 +1,49 @@
+<p>Tired of your Legion Go 2 fan revving up all the time, even when you're just browsing or playing light games? Existing fan control applications don't let you override the hardware's minimum fan speeds. Frustrated by this I built a tool that bypasses this limitation.</p>
+
+<br>
+<h3>LeGo2 Fan Control</h3>
+LeGo2 Fan Control controls your fan directly at the hardware level. You can set any fan speed at any temperature, and it will actually take effect. You could even set the fan to 0 RPM at 100°C if you really wanted to (don't do this 🫠).
+
+Some of the core features include:
+<ul>
+<li><b>Interactive Fan Curve Graph:</b> Create your own fan curve with a clean graphic interface.</li>
+<li><b>Fan Smoothing Algorithm:</b> Designed to ignore micro-spikes in temperatures whilst ensuring gradual temperature changes are responded to, keeping the fan steadier and less noticeable.</li>
+<li><b>Link to Power Modes:</b> Assign completely different fan curves to your Low Power, Balanced, Performance, and Custom power profiles. 
+Stepped Fan Curves:</b> Makes your fan speed only change at temperature breakpoints along the graph, rather than along the whole graph at every degree °C change.</li>
+<li><b>Lightweight & Unobtrusive:</b> CPU usage sits around 0% to 0.2% and uses less than 64Mb of memory.</li>
+<li><b>Thermal Failsafe:</b> If your APU ever hits 101°C, the app instantly kicks in a high RPM to cool down.</li>
+<li><b>Anti-Cheat Safe:</b> Windows utilises the open-source <a href=https://github.com/namazso/PawnIO">PawnIO</a> driver for secure hardware access. Linux uses native kernel pathways.</li>
+</ul>
+
+<br>
+<h4>Platforms</h4>
+There are two versions available depending on your setup:
+
+<ul>
+<li><p><b>Windows Version:</b>
+Download the Windows app <a href=https://drive.google.com/uc?id=1daSOBJgaf3sjsLE6WHcam2nul2oBxAJF>here</a>.
+Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> before running LeGo2 Fan Control on Windows.</p></li>
+<li><p><b>Decky Loader Version (SteamOS / Bazzite / CachyOS etc…):</b>
+If you’re running a Linux-based OS, the Decky Loader plugin version (aka this version) is completely free.
+Download the Decky Loader plugin <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky/releases">here</a>.
+To install, open Decky Loader, go to the Settings cog, Developer and then “Install Plugin from ZIP file”.
+Source available <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky">here</a></p></li>
+</ul>
+
+<br>
+<h4>Disclaimer / Warning</h4>
+
+<p>Please use this software responsibly. Modifying your device's cooling behaviour carries inherent risks. Setting fan speeds too low while the system is under heavy load can cause your device to overheat, which may result in thermal throttling, system shutdowns, or permanent hardware damage.</p>
+
+<p>By using this software, you accept full responsibility for any thermal issues or hardware damage that may occur.</p>
+
+<br>
+<h4>Created by</h4>
+
+<p>Luke Cama</p>
+
+<br>
+<h4>Acknowledgements</h4>
+
+<p>A special thanks to Undervoltologist for their work reverse engineering the EC behaviour.
+https://github.com/Undervoltologist</p>
