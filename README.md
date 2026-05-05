@@ -18,20 +18,18 @@ Stepped Fan Curves:</b> Makes your fan speed only change at temperature breakpoi
 
 <br>
 <h4>Platforms</h4>
-There are two versions available depending on your setup:
-
 <ul>
-<li><p><b>Windows Version:</b>
-  <img src="https://i.postimg.cc/bJVGFdhY/LG2FC-windows.png">
-Download the Windows app <a href="https://drive.google.com/uc?export=download&id=1daSOBJgaf3sjsLE6WHcam2nul2oBxAJF">here</a>.<br>
-Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> before running LeGo2 Fan Control on Windows.</p></li>
-  
-<li><p><b>Decky Loader Version (SteamOS / Bazzite / CachyOS etc…):</b>
+<li><p><b>Decky Loader Plugin Version (SteamOS / Bazzite / CachyOS etc…):</b>
   <img src="https://i.postimg.cc/WbvDYRRn/LG2FC-decky.jpg">
-If you’re running a Linux-based OS, the Decky Loader plugin version (aka this version) is completely free.<br>
-Download the Decky Loader plugin <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky/releases">here</a>.<br>
+Download the free Decky Loader plugin version <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky/releases">here</a>.<br>
 To install, open Decky Loader, go to the Settings cog, Developer and then “Install Plugin from ZIP file”.<br>
 Source available <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky">here</a></p></li>
+  
+<li><p><b>Windows Version:</b>
+  <img src="https://i.postimg.cc/bJVGFdhY/LG2FC-windows.png">
+This GitHub is for the Decky Loader plugin version, however the separate closed source Windows version can be downloaded <a href="https://cdn.laptopwiki.eu/public/apps/LeGo2FanControl/LeGo2FanControl_setup.exe">here</a>.<br>
+Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> before running LeGo2 Fan Control for Windows.</p></li>
+  
 
 </ul>
 
