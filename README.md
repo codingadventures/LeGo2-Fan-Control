@@ -29,7 +29,10 @@ Source available <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky">her
   <img src="https://i.postimg.cc/bJVGFdhY/LG2FC-windows.png">
 This GitHub is for the Decky Loader plugin version, however the separate closed source Windows version can be downloaded <a href="https://ftp.laptopwiki.eu/web/client/pubshares/3EX8zE3JFaWNAeV2M8j5iC?compress=false">here</a>.<br>
 Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> before running LeGo2 Fan Control for Windows.</p></li>
-  
+
+<p>Latest version:
+  <br>
+May 31st 2026: Fixed an issue where the app could appear blank if the system was busy during startup.
 
 </ul>
 
