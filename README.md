@@ -33,7 +33,7 @@ Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> bef
 <p><b>Windows Changelog:</b></p>
 May 31st 2026:
 <ul>
-  <li>Fixed an issue where the app could appear blank if the system was busy during startup.</li>
+  <li>Improved reliability where an issue would make the app could appear blank if the system was busy during startup.</li>
 </ul>
 <br>
 
@@ -41,6 +41,12 @@ June 4th 2026:
 <ul>
 <li>Fixed an issue where custom fan speeds would stop working after waking the device from sleep. </li>
 <li>Fixed the app accidentally opening in fullscreen mode when restored from a background startup. </li>
+</ul>
+<br>
+
+June 5th 2026:
+<ul>
+<li>Improved taskbar and systray behaviour. </li>
 </ul>
 
 <br>
