@@ -31,11 +31,6 @@ This GitHub is for the Decky Loader plugin version, however the separate closed 
 Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> before running LeGo2 Fan Control for Windows.</p></li>
 <br>
 <p><b>Windows Changelog:</b></p>
-May 31st 2026:
-<ul>
-  <li>Improved reliability where an issue would make the app could appear blank if the system was busy during startup.</li>
-</ul>
-<br>
 
 June 4th 2026:
 <ul>
@@ -48,7 +43,12 @@ June 5th 2026:
 <ul>
 <li>Improved taskbar and systray behaviour. </li>
 </ul>
+<br>
 
+June 7th 2026:
+<ul>
+  <li>Improved reliability where an issue would make the app could appear blank when launched</li>
+</ul>
 <br>
 <h4>Disclaimer / Warning</h4>
 
