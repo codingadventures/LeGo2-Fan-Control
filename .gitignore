@@ -1,71 +1,36 @@
-# --- Standard Ignores ---
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-*.swp
-*.bat
-
-pids/
-logs/
-results/
-tmp/
-
-# Coverage reports
-coverage/
-
-# API keys and secrets
-.env
-
-# Dependency directory
+# Dependencies
 node_modules/
-bower_components/
 .pnpm-store/
+
+# Build output
+dist/
+out/
+cli/
+
+# Python
+__pycache__/
+
+# Decky plugin loader module
+decky_plugin.py
 
 # Editors
 .idea/
-*.iml
 .vscode/settings.json
 
 # OS metadata
 .DS_Store
-Thumbs.db
 
-# Ignore built ts files
-dist/
+# Secrets
+.env
 
-__pycache__/
+# Logs
+*.log
 
-/.yalc
-yalc.lock
-
-# Ignore output folder
-backend/out/
-
-# Make sure to ignore any instance of the loader's decky_plugin.py
-decky_plugin.py
-
-# Ignore decky CLI for building plugins
-out/
-cli/
-
-# --- LeGo2 Fan Control Specifics ---
-# Ignore generated staging folders and archives
-Staged LeGo2 Fan Control/
+# Archives
 *.zip
-*.msi
 
-# Ignore dynamically generated files
-AppVersion.cs
-license.dat
-settings.ini
+# Build staging folder
+build_pkg/
 
-# Standard .NET / Visual Studio ignores
-bin/
-obj/
-.vs/
-*.user
+# Local test scripts
+test_smoothing.py
