@@ -1,66 +1,102 @@
-<p>Tired of your Legion Go 2 fan revving up and down at high speeds regardless of light or heavy games? Existing fan control applications don't let you override the hardware's minimum fan speeds. Frustrated by this I built a tool that bypasses this limitation.</p>
+# LeGo2 Fan Control
 
-<br>
+Full, unrestricted fan control for the **Lenovo Legion Go 2** (models `8ASP2` / `8AHP2`), packaged as a [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) plugin for SteamOS, Bazzite, CachyOS, and other Linux handheld setups.
 
-<h3>LeGo2 Fan Control</h3>
-LeGo2 Fan Control controls your fan directly at the hardware level. You can set any fan speed at any temperature, and it will actually take effect. You could even set the fan to 0 RPM at 100°C if you really wanted to (don't do this 🫠).
+Tired of the fan revving up and down regardless of whether you're playing something light or heavy? Existing tools won't let you override the hardware's minimum fan speeds. This plugin talks directly to the embedded controller (EC), so any fan speed you set at any temperature actually takes effect.
 
-Some of the core features include:
-<ul>
-<li><b>Interactive Fan Curve Graph:</b> Create your own fan curve with a clean graphic interface.</li>
-<li><b>Fan Smoothing Algorithm:</b> Designed to ignore micro-spikes in temperatures whilst ensuring gradual temperature changes are responded to, keeping the fan steadier and less noticeable.</li>
-<li><b>Link to Power Modes:</b> Assign completely different fan curves to your Low Power, Balanced, Performance, and Custom power profiles. 
-Stepped Fan Curves:</b> Makes your fan speed only change at temperature breakpoints along the graph, rather than along the whole graph at every degree change.</li>
-<li><b>Lightweight & Unobtrusive:</b> CPU usage sits around 0% to 0.2% and uses less than 64Mb of memory.</li>
-<li><b>Thermal Failsafe:</b> If your APU ever hits 101°C, the app instantly kicks in a high RPM to cool down.</li>
-<li><b>Anti-Cheat Safe:</b> Windows utilises the open-source <a href=https://github.com/namazso/PawnIO">PawnIO</a> driver for secure hardware access. Linux uses native kernel pathways.</li>
-</ul>
+> **This is a fork** of the original [LeGo2 Fan Control by Luke Cama](https://github.com/Rodpad/LeGo2-Fan-Control), with an overhauled smoothing algorithm and several stability and safety fixes. See [Changes in this fork](#changes-in-this-fork).
 
-<br>
-<h4>Platforms</h4>
-<ul>
-<li><p><b>Decky Loader Plugin Version (SteamOS / Bazzite / CachyOS etc…):</b>
-  <img src="https://i.postimg.cc/WbvDYRRn/LG2FC-decky.jpg">
-Download the free Decky Loader plugin version <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky/releases">here</a>.<br>
-To install, open Decky Loader, go to the Settings cog, Developer and then “Install Plugin from ZIP file”.<br>
-Source available <a href="https://github.com/Rodpad/LeGo2-Fan-Control-Decky">here</a></p></li>
-  
-<li><p><b>Windows Version:</b>
-  <img src="https://i.postimg.cc/bJVGFdhY/LG2FC-windows.png">
-This GitHub is for the Decky Loader plugin version, however the separate closed source Windows version can be downloaded <a href="https://ftp.laptopwiki.eu/web/client/pubshares/3EX8zE3JFaWNAeV2M8j5iC?compress=false">here</a>.<br>
-Please ensure you download and install <a href=https://pawnio.eu/>PawnIO</a> before running LeGo2 Fan Control for Windows.</p></li>
-<br>
-<p><b>Windows Changelog:</b></p>
+<p align="center">
+  <img src="https://i.postimg.cc/WbvDYRRn/LG2FC-decky.jpg" alt="LeGo2 Fan Control plugin UI in the Decky sidebar">
+</p>
 
-June 4th 2026:
-<ul>
-<li>Fixed an issue where custom fan speeds would stop working after waking the device from sleep. </li>
-<li>Fixed the app accidentally opening in fullscreen mode when restored from a background startup. </li>
-</ul>
-<br>
+---
 
-June 5th 2026:
-<ul>
-<li>Improved taskbar and systray behaviour. </li>
-</ul>
-<br>
+## Features
 
-June 7th 2026:
-<ul>
-  <li>Improved reliability where an issue would make the app could appear blank when launched</li>
-</ul>
-<br>
-<h4>Disclaimer / Warning</h4>
+- **Interactive fan curve graph** — draw your own curve directly in the Decky sidebar.
+- **Smart fan smoothing** — ramp-rate limiting combined with hysteresis. The fan responds promptly to real heat but ramps up gradually instead of skyrocketing on brief spikes, and it won't hunt up and down around a breakpoint.
+- **Per-power-mode curves** — assign different curves to your Performance, Balanced, Quiet, and Custom power profiles.
+- **Stepped or smooth curves** — change speed only at temperature breakpoints, or interpolate continuously across the whole curve.
+- **Thermal failsafe** — if the APU hits 101°C, the plugin instantly forces a high RPM to cool down, regardless of your curve.
+- **Lightweight** — a single background thread that sleeps most of the time; CPU usage sits around 0–0.2%.
+- **Safe by design** — hands fan control back to the firmware whenever the plugin unloads (reload, desktop-mode switch, or shutdown).
 
-<p>By using this software, you accept full responsibility for any damage that may occur. Bypassing hardware thermal limits carries inherent risks; use sensible fan curves.</p>
+---
 
-<br>
-<h4>Created by</h4>
+## Requirements
 
-<p>Luke Cama</p>
+- Lenovo Legion Go 2 (`8ASP2` / `8AHP2`). The plugin auto-detects the hardware via DMI and disables itself on anything else.
+- [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) installed.
 
-<br>
-<h4>Acknowledgements</h4>
+The plugin runs with root privileges (declared in `plugin.json`) because it needs direct EC access via `/dev/port`.
 
-<p>A special thanks to Undervoltologist for their help in reverse engineering EC behaviour.
-https://github.com/Undervoltologist</p>
+---
+
+## Install
+
+In Game Mode: open Decky (the plug icon) → Settings (gear) → **Developer** → enable Developer Mode → **Install Plugin from ZIP File**, then select the plugin zip.
+
+### Build from source
+
+The UI is TypeScript/React and must be compiled before packaging:
+
+```bash
+npm install        # install frontend dependencies
+npm run build      # compiles src/ into dist/index.js
+```
+
+Then bundle the runtime files into a folder named `LeGo2 Fan Control` and zip it:
+
+```
+LeGo2 Fan Control/
+├── plugin.json
+├── main.py
+├── fan_logic.py
+├── package.json
+└── dist/index.js
+```
+
+Install the resulting zip through Decky as described above. (Note: the Decky CLI's `plugin build` requires Docker even for a Python-only plugin; the manual zip above avoids that dependency.)
+
+---
+
+## How the smoothing works
+
+When smoothing is enabled, every tick (3 seconds) the plugin reads the APU temperature and computes the ideal RPM from your curve, then decides how to move toward it:
+
+- **Hysteresis** decides *whether* to react. It responds to rising temperature once it has climbed 3°C past the last change, and to falling temperature once it has dropped 7°C. This keeps the fan from constantly adjusting around a single point.
+- **Ramp-rate limiting** decides *how fast* to move. RPM changes by at most +300 per tick when speeding up and −200 per tick when slowing down, so transitions are gradual rather than abrupt.
+- **Hold timeout** prevents getting stuck: if the temperature holds steady above the current fan speed for several ticks, the fan ramps anyway until it reaches the curve target.
+
+The 101°C thermal failsafe bypasses all of this and jumps straight to a high RPM.
+
+With smoothing disabled, the fan simply follows the curve exactly, adjusting every tick.
+
+---
+
+## Changes in this fork
+
+- **Rewrote the smoothing algorithm** — ramp-rate limiting + hysteresis + hold-timeout (described above), replacing the previous fixed-distance approach. Fixes both fan "skyrocketing" on fast temperature deltas and lagging behind sustained load.
+- **Thread safety** — added a lock around state shared between the background control loop and the UI, removing read/write races.
+- **Atomic settings saves** — settings are written to a temp file and renamed, so a power loss mid-write can't corrupt them.
+- **Input validation** — curves received from the UI are bounds-checked before being applied.
+- **Reliable sleep/wake handling** — detects wake via a monotonic time-gap and immediately re-applies fan settings.
+- **Faster, safer shutdown** — the control loop uses an interruptible wait, so unloading returns almost instantly while still releasing EC control back to the firmware.
+- **Cleanup and testability** — removed unused plugin-template scaffolding and extracted the pure control math into `fan_logic.py`, with a `test_smoothing.py` simulation harness for verifying behavior without hardware.
+
+---
+
+## Disclaimer
+
+By using this software, you accept full responsibility for any damage that may occur. Bypassing hardware thermal limits carries inherent risk — use sensible fan curves. You can technically set 0 RPM at 100°C; please don't.
+
+---
+
+## Credits
+
+- Original plugin created by **Luke Cama**.
+- EC behaviour reverse-engineered with the help of [Undervoltologist](https://github.com/Undervoltologist).
+- This fork maintained by [codingadventures](https://github.com/codingadventures).
+
+Licensed under GPLv3.
