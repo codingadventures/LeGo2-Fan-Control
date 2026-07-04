@@ -14,7 +14,7 @@ from typing import Optional
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fan_logic
 
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 log_dir = "/home/deck/homebrew/logs/lego2-fan-control"
 os.makedirs(log_dir, exist_ok=True)

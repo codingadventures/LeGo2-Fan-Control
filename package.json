@@ -1,6 +1,6 @@
 {
   "name": "lego2-fan-control",
-  "version": "0.260430",
+  "version": "0.260704",
   "type": "module",
   "scripts": {
     "build": "rollup -c",
